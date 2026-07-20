@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marcações — SR | Professional Groomer</title>
+<meta name="description" content="Marque a sessão de grooming do seu cão com a Soraia Rodrigues, em Cruz Quebrada, Oeiras. Pedido automático via WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="index.html">
+      <svg class="mono" viewBox="0 0 100 100" aria-hidden="true">
+        <circle cx="50" cy="50" r="47" fill="none" stroke="#B9975B" stroke-width="1.3" opacity=".55"/>
+        <text x="40" y="64" font-family="Cormorant Garamond,serif" font-size="46" font-style="italic" fill="#B9975B" text-anchor="middle">S</text>
+        <text x="60" y="70" font-family="Cormorant Garamond,serif" font-size="46" font-style="italic" fill="#8A7460" text-anchor="middle">R</text>
+        <text x="76" y="38" font-size="15" fill="#B9975B" text-anchor="middle">✦</text>
+      </svg>
+      <span><b>SR</b><small>Professional Groomer</small></span>
+    </a>
+    <nav class="menu">
+      <a href="index.html"><span class="pt-only">Início</span><span class="en-only">Home</span></a>
+      <span class="has-sub">
+        <a href="sobre.html"><span class="pt-only">A Soraia</span><span class="en-only">About Soraia</span></a>
+        <span class="sub"><a href="sobre.html#caes"><span class="pt-only">Os Meus Cães</span><span class="en-only">My Dogs</span></a></span>
+      </span>
+      <a href="estudio.html"><span class="pt-only">Estúdio</span><span class="en-only">The Studio</span></a>
+      <a href="workshops.html">Workshops</a>
+      <a href="marcacoes.html" class="active"><span class="pt-only">Marcações</span><span class="en-only">Bookings</span></a>
+      <a href="loja.html"><span class="pt-only">Loja</span><span class="en-only">Shop</span></a>
+      <button class="lang-btn" type="button">EN · 🇬🇧</button>
+    </nav>
+    <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <span class="eyebrow"><span class="pt-only">Marcações</span><span class="en-only">Bookings</span></span>
+    <h1><span class="pt-only">Reserve a hora<br><em class="gold">do seu cão</em></span>
+        <span class="en-only">Reserve your<br><em class="gold">dog's hour</em></span></h1>
+    <p class="lead">
+      <span class="pt-only">Preencha o pedido abaixo — abre diretamente no WhatsApp da Soraia, já organizado, e ela confirma a disponibilidade. Simples assim. 💬</span>
+      <span class="en-only">Fill in the request below — it opens directly in Soraia's WhatsApp, neatly organised, and she confirms availability. That simple. 💬</span>
+    </p>
+  </div>
+</section>
+
+<section class="branca">
+  <div class="wrap grid2" style="align-items:start">
+    <!-- Booking form -->
+    <div class="rev">
+      <h2 style="margin-bottom:1.8rem"><span class="pt-only">Pedido de marcação</span><span class="en-only">Booking request</span></h2>
+      <form class="book" onsubmit="return srBook(event)">
+        <div>
+          <label for="bk-nome"><span class="pt-only">O seu nome</span><span class="en-only">Your name</span></label>
+          <input id="bk-nome" required placeholder="Maria Silva">
+        </div>
+        <div>
+          <label for="bk-cao"><span class="pt-only">Nome do cão</span><span class="en-only">Dog's name</span></label>
+          <input id="bk-cao" required placeholder="Luna">
+        </div>
+        <div>
+          <label for="bk-raca"><span class="pt-only">Raça</span><span class="en-only">Breed</span></label>
+          <input id="bk-raca" required placeholder="Australian Shepherd">
+        </div>
+        <div>
+          <label for="bk-servico"><span class="pt-only">Serviço</span><span class="en-only">Service</span></label>
+          <select id="bk-servico" required>
+            <option value="Full Groom">Full Groom</option>
+            <option value="Banho & Escovagem / Bath & Brush">Banho &amp; Escovagem · Bath &amp; Brush</option>
+            <option value="Coat & Skin Care">Coat &amp; Skin Care</option>
+            <option value="Show Dog Prep">Show Dog Prep</option>
+            <option value="Primeira vez / First visit">Primeira vez · First visit</option>
+          </select>
+        </div>
+        <div>
+          <label for="bk-data"><span class="pt-only">Data preferida</span><span class="en-only">Preferred date</span></label>
+          <input id="bk-data" type="date" required>
+        </div>
+        <div>
+          <label for="bk-hora"><span class="pt-only">Hora preferida</span><span class="en-only">Preferred time</span></label>
+          <select id="bk-hora" required>
+            <option>10:00</option><option>11:00</option><option>12:00</option>
+            <option>14:00</option><option>15:00</option><option>16:00</option><option>17:00</option>
+          </select>
+        </div>
+        <div class="full">
+          <label for="bk-notas"><span class="pt-only">Notas (sensibilidades, nós, primeira visita…)</span><span class="en-only">Notes (sensitivities, mats, first visit…)</span></label>
+          <textarea id="bk-notas"></textarea>
+        </div>
+        <div class="full center" style="margin-top:.6rem">
+          <button class="btn solid" type="submit"><span class="pt-only">Enviar pedido via WhatsApp 💬</span><span class="en-only">Send request via WhatsApp 💬</span></button>
+          <p style="font-size:.8rem;color:var(--castanho);margin-top:1rem">
+            <span class="pt-only">✦ A marcação só fica confirmada após resposta da Soraia.</span>
+            <span class="en-only">✦ Your booking is only confirmed once Soraia replies.</span>
+          </p>
+        </div>
+      </form>
+    </div>
+
+    <!-- Availability -->
+    <div class="rev">
+      <div class="card" style="margin-bottom:1.6rem">
+        <h3 style="margin-bottom:1rem">🗓 <span class="pt-only">Disponibilidade habitual</span><span class="en-only">Usual availability</span></h3>
+        <table class="horario">
+          <tr><td><span class="pt-only">Segunda a Sexta</span><span class="en-only">Monday to Friday</span></td><td>10:00 — 18:00</td></tr>
+          <tr><td><span class="pt-only">Sábado</span><span class="en-only">Saturday</span></td><td>10:00 — 14:00</td></tr>
+          <tr class="off"><td><span class="pt-only">Domingo</span><span class="en-only">Sunday</span></td><td><span class="pt-only">fechado</span><span class="en-only">closed</span></td></tr>
+        </table>
+        <p style="font-size:.85rem;color:var(--castanho);margin-top:1.2rem;font-style:italic">
+          <span class="pt-only">Sessões individuais — a agenda enche depressa, marque com antecedência.</span>
+          <span class="en-only">One-on-one sessions — the diary fills up fast, book ahead.</span>
+        </p>
+      </div>
+      <div class="card">
+        <h3 style="margin-bottom:.8rem">📌 <span class="pt-only">Antes da sessão</span><span class="en-only">Before your session</span></h3>
+        <p style="font-size:.94rem"><span class="pt-only">Traga o seu cão com trela, de preferência depois de um passeio calmo. Se tiver historial de medo de secadores ou tesouras, mencione nas notas — a sessão será adaptada.</span>
+           <span class="en-only">Bring your dog on a lead, ideally after a calm walk. If they have a history of fearing dryers or scissors, mention it in the notes — the session will be adapted.</span></p>
+      </div>
+
+      <!-- ============================================================
+           CALENDLY (opcional / optional)
+           Para ativar um calendário sincronizado gratuito:
+           1. Criar conta gratuita em https://calendly.com
+           2. Criar um evento "Sessão de Grooming"
+           3. Substituir o URL abaixo pelo teu link Calendly
+           4. Apagar 'style="display:none"'
+           ============================================================ -->
+      <div style="display:none" id="calendly-slot">
+        <div class="calendly-inline-widget" data-url="https://calendly.com/O-TEU-UTILIZADOR/sessao-grooming" style="min-width:320px;height:640px"></div>
+        <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="areia center">
+  <div class="wrap rev">
+    <h2><span class="pt-only">Prefere falar diretamente? <em class="gold">✦</em></span><span class="en-only">Prefer to talk directly? <em class="gold">✦</em></span></h2>
+    <div style="margin-top:2.2rem">
+      <a class="btn solid" href="https://wa.me/351967692980" target="_blank" rel="noopener">WhatsApp — +351 967 692 980</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="grid3">
+      <div>
+        <h4>SR | Professional Groomer</h4>
+        <p style="font-size:.92rem;font-style:italic">✨ More than meets the eye ✨</p>
+        <p style="font-size:.88rem;margin-top:1rem">Rua Sacadura Cabral 65, l9<br>Cruz Quebrada, Lisboa<br>Portugal 1495-207</p>
+      </div>
+      <div>
+        <h4><span class="pt-only">Navegação</span><span class="en-only">Navigation</span></h4>
+        <ul>
+          <li><a href="sobre.html"><span class="pt-only">A Soraia</span><span class="en-only">About Soraia</span></a></li>
+          <li><a href="estudio.html"><span class="pt-only">Estúdio &amp; Serviços</span><span class="en-only">Studio &amp; Services</span></a></li>
+          <li><a href="workshops.html">Workshops</a></li>
+          <li><a href="marcacoes.html"><span class="pt-only">Marcações</span><span class="en-only">Bookings</span></a></li>
+          <li><a href="loja.html"><span class="pt-only">Loja</span><span class="en-only">Shop</span></a></li>
+        </ul>
+      </div>
+      <div>
+        <h4><span class="pt-only">Contactos</span><span class="en-only">Contact</span></h4>
+        <ul>
+          <li><a href="https://wa.me/351967692980" target="_blank" rel="noopener">WhatsApp — +351 967 692 980</a></li>
+          <li><a href="https://www.instagram.com/soraiarodriguesgroomer" target="_blank" rel="noopener">Instagram — @soraiarodriguesgroomer</a></li>
+          <li><a href="https://www.tiktok.com/@soraiarodigues169" target="_blank" rel="noopener">TikTok</a></li>
+          <li><a href="https://m.facebook.com/soraya.rodrigues.921/" target="_blank" rel="noopener">Facebook</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="fim">
+      <span>© <span class="ano">2026</span> Soraia Rodrigues — SR | Professional Groomer</span>
+      <span><span class="pt-only">Feito com calma, como tudo o resto.</span><span class="en-only">Made calmly, like everything else.</span> ✦</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
